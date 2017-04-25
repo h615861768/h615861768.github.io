@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="browser," />
 
 
 
@@ -90,15 +90,17 @@
 
 
 
-<meta name="description" content="不会写前端的美术,不是好运营">
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端学习小站">
-<meta property="og:url" content="http://yoursite.com/tags/测试标签页/index.html">
+<meta name="description" content="浏览器对页面的渲染 HTML解析 加载外部脚本及样式 解析脚本并执行 构造DOM结构开始渲染 完成图片和外部资源的下载 页面加载完成">
+<meta name="keywords" content="browser">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器渲染">
+<meta property="og:url" content="http://yoursite.com/uncategorized/browser-rendering.html">
 <meta property="og:site_name" content="前端学习小站">
-<meta property="og:description" content="不会写前端的美术,不是好运营">
+<meta property="og:description" content="浏览器对页面的渲染 HTML解析 加载外部脚本及样式 解析脚本并执行 构造DOM结构开始渲染 完成图片和外部资源的下载 页面加载完成">
+<meta property="og:updated_time" content="2017-04-25T16:43:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端学习小站">
-<meta name="twitter:description" content="不会写前端的美术,不是好运营">
+<meta name="twitter:title" content="浏览器渲染">
+<meta name="twitter:description" content="浏览器对页面的渲染 HTML解析 加载外部脚本及样式 解析脚本并执行 构造DOM结构开始渲染 完成图片和外部资源的下载 页面加载完成">
 
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/测试标签页/"/>
+  <link rel="canonical" href="http://yoursite.com/uncategorized/browser-rendering.html"/>
 
 
 
 
 
-  <title>标签: 测试标签页 | 前端学习小站</title>
+  <title>浏览器渲染 | 前端学习小站</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -238,7 +240,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于
+            简历
           </a>
         </li>
       
@@ -261,46 +263,175 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        测试标签页
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/browser-rendering.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="洪高亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端学习小站">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                浏览器渲染
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-23T21:48:53+08:00">
+                2016-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="浏览器对页面的渲染"><a href="#浏览器对页面的渲染" class="headerlink" title="浏览器对页面的渲染"></a>浏览器对页面的渲染</h3><ol>
+<li>HTML解析</li>
+<li>加载外部脚本及样式</li>
+<li>解析脚本并执行</li>
+<li>构造DOM结构开始渲染</li>
+<li>完成图片和外部资源的下载</li>
+<li>页面加载完成</li>
+</ol>
+<a id="more"></a>
+<h3 id="JS和CSS加载的特殊性"><a href="#JS和CSS加载的特殊性" class="headerlink" title="JS和CSS加载的特殊性:"></a>JS和CSS加载的特殊性:</h3><ol>
+<li>对JS，CSS这种语义解释性的嵌入文件，浏览器会使用单独的连接进行下载，下载完成后进行解析，解析的过程中，会停止页面所有后续元素的下载.</li>
+<li>样式表加载，IE，CHROME，safari 需要等到全部的样式表都加载</li>
+</ol>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><ol>
+<li>把css放入head，优先加载样式表，这样页面加载出来之后，不会没有样式，用户体验好</li>
+<li>把js文件放入body里面结尾处，处理的好处是无需担心因页面未完成加载，造成DOM节点获取不到，使脚本报错的问题，而且能避免因脚本运行缓慢造成页面卡死的问题。</li>
+</ol>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/前端学习/My-New-Post.html" itemprop="url">
-              
-                <span itemprop="name">My New Post</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-01-22T23:36:19+08:00"
-              content="2016-01-22" >
-          01-22
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/browser/" rel="tag"># browser</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/生活/my-digital-products.html" rel="next" title="我的数码设备">
+                <i class="fa fa-chevron-left"></i> 我的数码设备
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/hexo-command.html" rel="prev" title="hexo常用命令">
+                hexo常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -308,6 +439,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -327,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -343,7 +487,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -354,7 +498,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -365,7 +509,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -423,6 +567,18 @@
                   <a href="http://es6.ruanyifeng.com/" title="ES6" target="_blank">ES6</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="https://developer.mozilla.org/zh-CN/" title="MDN" target="_blank">MDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://caniuse.com/" title="can i use" target="_blank">can i use</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://juejin.im/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -432,6 +588,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器对页面的渲染"><span class="nav-number">1.</span> <span class="nav-text">浏览器对页面的渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS和CSS加载的特殊性"><span class="nav-number">2.</span> <span class="nav-text">JS和CSS加载的特殊性:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-number">3.</span> <span class="nav-text">优化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -557,6 +729,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
