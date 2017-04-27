@@ -93,13 +93,13 @@
 <meta name="description" content="1.TypeScript概述TypeScript 是由 C#语言之父 Anders Hejlsberg 主导开发的变成语言，本质上是向JavaScript语言添加可选的静态类型和基于类的面向对象变成，同时也支持诸如接口、命名空间、装饰器等特性，它相当于是JavaScript的超集。 2009年开始设计的TypeScript语言，经历了几年的发展后，最终向ECMAScript靠拢，实现了其标准，主要">
 <meta name="keywords" content="TypeScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TypeScript">
+<meta property="og:title" content="TypeScript基本数据类型">
 <meta property="og:url" content="http://yoursite.com/uncategorized/typescript.html">
 <meta property="og:site_name" content="前端学习小站">
 <meta property="og:description" content="1.TypeScript概述TypeScript 是由 C#语言之父 Anders Hejlsberg 主导开发的变成语言，本质上是向JavaScript语言添加可选的静态类型和基于类的面向对象变成，同时也支持诸如接口、命名空间、装饰器等特性，它相当于是JavaScript的超集。 2009年开始设计的TypeScript语言，经历了几年的发展后，最终向ECMAScript靠拢，实现了其标准，主要">
-<meta property="og:updated_time" content="2017-04-27T09:33:07.000Z">
+<meta property="og:updated_time" content="2017-04-27T17:50:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TypeScript">
+<meta name="twitter:title" content="TypeScript基本数据类型">
 <meta name="twitter:description" content="1.TypeScript概述TypeScript 是由 C#语言之父 Anders Hejlsberg 主导开发的变成语言，本质上是向JavaScript语言添加可选的静态类型和基于类的面向对象变成，同时也支持诸如接口、命名空间、装饰器等特性，它相当于是JavaScript的超集。 2009年开始设计的TypeScript语言，经历了几年的发展后，最终向ECMAScript靠拢，实现了其标准，主要">
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>TypeScript | 前端学习小站</title>
+  <title>TypeScript基本数据类型 | 前端学习小站</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                TypeScript
+                TypeScript基本数据类型
               
             
           </h1>
@@ -356,6 +356,7 @@
 <li>never 类型</li>
 </ul>
 <p>在TypeScript中声明变量，需要加上类型声明，通过类型声明，可以避免类型混用的错误</p>
+<a id="more"></a>
 <ul>
 <li>声明布尔类型</li>
 </ul>
@@ -393,8 +394,9 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">// void表示没有任何类型，例如一个函数没有返回值时，意味着返回值类型是void，</div><div class="line"></div><div class="line">function hello():void&#123;</div><div class="line">    alert(&quot;hello world&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">// 对于可以忽略返回值的回调函数来说， 使用void更安全</div><div class="line">function func(foo:()=&gt;void)&#123;</div><div class="line">    let f = foo(); //使用函数foo的返回值</div><div class="line">    f.doSth(); // 报错，void类型不存在这个方法。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>声明never</li>
+<li>声明never<br>never是 null 和 undefined的子类型，代表从不会出现的值，这意味着生命为never类型的变量只能被never类型所赋值，在函数中它通常表现为抛出异常或无法执行到终止点（例如无限循环），示例代码如下：</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">let x: never;</div><div class="line">ley y: number;</div><div class="line"></div><div class="line"></div><div class="line">x = 123; // 错误， 数字类型不能转为never类型</div><div class="line"></div><div class="line"></div><div class="line">//运行正确， never类型可以赋值给never类型</div><div class="line">x=(()=&gt;&#123; throw new Error(&apos;exception occur&apos;)&#125;)();</div><div class="line"></div><div class="line">//运行正确， never类型可以赋值给数字类型</div><div class="line">y=(()=&gt;&#123; throw new Error(&apos;exception occur&apos;)&#125;)();</div><div class="line"></div><div class="line">//返回值为never的函数可以是抛出异常的情况</div><div class="line">function error(message: string):never&#123;</div><div class="line">  throw new Error(message);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//返回值为never的函数可以是无法被执行到的终止点的情况</div><div class="line">function loop(): never&#123;</div><div class="line">  while(true)&#123;</div><div class="line">  </div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -517,7 +519,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -539,7 +541,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
