@@ -263,6 +263,186 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/typescript.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="洪高亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端学习小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/uncategorized/typescript.html" itemprop="url">
+                  TypeScript
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-05T21:21:14+08:00">
+                2017-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-TypeScript概述"><a href="#1-TypeScript概述" class="headerlink" title="1.TypeScript概述"></a>1.TypeScript概述</h1><p>TypeScript 是由 C#语言之父 Anders Hejlsberg 主导开发的变成语言，本质上是向JavaScript语言添加可选的静态类型和基于类的面向对象变成，同时也支持诸如接口、命名空间、装饰器等特性，它相当于是JavaScript的超集。</p>
+<p>2009年开始设计的TypeScript语言，经历了几年的发展后，最终向ECMAScript靠拢，实现了其标准，主要有类型校验、接口、装饰器等特性，使代码更加的规范化，有利于项目的维护。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>TypeScript工具依赖npm进行安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ npm install typescript@2.0.0 -g</div></pre></td></tr></table></figure>
+<p>TypeScript 文件后缀格式为<code>.ts</code></p>
+<p>浏览器要运行TypeScript程序，需要先编译成浏览器能识别的代码，可以通过自带的tsc编译器来编译TypeScript文件。</p>
+<p>编译方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ tsc xxxx.ts</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><ul>
+<li>布尔类型(boolean)</li>
+<li>数字类型(number)</li>
+<li>字符串类型(string)</li>
+<li>数组类型(array)</li>
+<li>元祖类型(tuple)</li>
+<li>枚举类型(enum)</li>
+<li>任意值类型(any)</li>
+<li>null 和 undefined</li>
+<li>void 类型</li>
+<li>never 类型</li>
+</ul>
+<p>在TypeScript中声明变量，需要加上类型声明，通过类型声明，可以避免类型混用的错误</p>
+<ul>
+<li>声明布尔类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">let flag:boolean = true</div></pre></td></tr></table></figure>
+<ul>
+<li>声明数字类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">let num: number = 1 // 十进制</div><div class="line">let num: number = 0b1010 // 二进制</div><div class="line">let num: number = 0o744 // 八进制</div><div class="line">let num: number = 0xf00d // 十六进制</div></pre></td></tr></table></figure>
+<ul>
+<li>声明字符串类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">let name: string = &quot;Angular2&quot;;</div><div class="line">let words: string = `你好，我是$&#123; name &#125;` //嵌入变量</div></pre></td></tr></table></figure>
+<ul>
+<li>声明数组类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">let arr: number[] = [1,2]; //在类型后面加上[]</div><div class="line">let arr: Array&lt;number&gt; = [1,2]; //或者使用数组泛型</div></pre></td></tr></table></figure>
+<ul>
+<li>声明元祖类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">let x:[string,number];</div><div class="line">x = [&apos;Angular&apos;,25]; //正确</div><div class="line">x = [10, &apos;Angular&apos;]; //报错</div></pre></td></tr></table></figure>
+<ul>
+<li>声明枚举类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">enum Color &#123;Red, Green,Blue&#125;;</div><div class="line">let c: Color = Color.Blue;</div><div class="line">console.log(c) // 2</div><div class="line"></div><div class="line">//可以修改默认下标</div><div class="line">enum Color &#123;Red = 2,Blue,Green = 6&#125;;</div><div class="line">let c: Color = Color.Blue; </div><div class="line">console.log(c) //3</div></pre></td></tr></table></figure>
+<ul>
+<li>声明任意值类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">let x: any = 1;</div><div class="line">x = &quot;I am a String&quot;;</div><div class="line">x = false; </div><div class="line">//定义数组</div><div class="line">let arr : any[] = [1,false,&quot;john&quot;];</div></pre></td></tr></table></figure>
+<ul>
+<li>null 和undefined</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">let x: number;</div><div class="line">x = 1; // 正确</div><div class="line">x = undefined; //错误</div><div class="line">x = null; //错误</div><div class="line">//以上的x 只能是数字类型</div><div class="line">//如果一个类型可能出现null undefined 可以用 | 支持</div><div class="line"></div><div class="line">let x: number;</div><div class="line">let y: number | undefined;</div><div class="line">let z: number | undefined | null;</div><div class="line"></div><div class="line">x = 1; // 正确</div><div class="line">y = 1; // 正确</div><div class="line">z = 1; // 正确</div><div class="line"></div><div class="line">x = undefined; // 错误 </div><div class="line">y = undefined; // 正确</div><div class="line">z = undefined; // 正确</div><div class="line"></div><div class="line">x = null; // 错误</div><div class="line">y = null; // 错误</div><div class="line">z = null; // 正确</div><div class="line"></div><div class="line">x = y // 错误</div><div class="line">x = z // 错误</div><div class="line">y = x // 正确</div><div class="line">y = z // 错误</div><div class="line">z = x // 正确</div><div class="line">z = y // 正确</div></pre></td></tr></table></figure>
+<ul>
+<li>声明void类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">// void表示没有任何类型，例如一个函数没有返回值时，意味着返回值类型是void，</div><div class="line"></div><div class="line">function hello():void&#123;</div><div class="line">    alert(&quot;hello world&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">// 对于可以忽略返回值的回调函数来说， 使用void更安全</div><div class="line">function func(foo:()=&gt;void)&#123;</div><div class="line">    let f = foo(); //使用函数foo的返回值</div><div class="line">    f.doSth(); // 报错，void类型不存在这个方法。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>声明never</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/creatwebsite.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -598,6 +778,127 @@
           
             <p>在简书看到一个科学上网SS服务商，1块钱测试了1个月，挺稳定的，我买了1年，优惠价15块，每月20G，看优土不卡，非常不错。</p>
 <p>地址： <a href="http://t.cn/R6ACMRd" target="_blank" rel="external">http://t.cn/R6ACMRd</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/mamp-password.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="洪高亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端学习小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/uncategorized/mamp-password.html" itemprop="url">
+                  mac mamp本地服务器环境修改数据库密码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-28T00:00:52+08:00">
+                2016-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="MAC-MAMP本地服务器修改数据库密码后，无法登陆数据库问题"><a href="#MAC-MAMP本地服务器修改数据库密码后，无法登陆数据库问题" class="headerlink" title="MAC MAMP本地服务器修改数据库密码后，无法登陆数据库问题"></a>MAC MAMP本地服务器修改数据库密码后，无法登陆数据库问题</h3><p>mamp在数据库中修改密码后，无法登陆数据库后台，需要修改如下目录的几个文件，把新密码更新上去。</p>
+<p>/Application/MAMP/bin/phpAdmin/config.inc.php<br>以及以下五个文件中的-proot改为-p+新密码<br>/Application/MAMP/bin/checkMysql.sh<br>/Application/MAMP/bin/quickCheckMysqlUpgrade.sh<br>/Application/MAMP/bin/repairMysql.sh<br>/Application/MAMP/bin/stopMysql.sh<br>/Application/MAMP/bin/upgradeMysql.sh</p>
 
           
         
@@ -1307,276 +1608,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/自适应.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="洪高亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端学习小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/uncategorized/自适应.html" itemprop="url">
-                  自适应
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-26T01:12:26+08:00">
-                2016-05-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><p>自适应是一种可以适应各种不同屏幕分辨率的概念，不需要为每种不同分辨率的手机单独适配，适合手机端</p>
-<h3 id="适用："><a href="#适用：" class="headerlink" title="适用："></a>适用：</h3><p> 但是如果要用于手机与PC ，就不适合了，因为元素放大与缩小在手机跟pc端的体验相差还是挺大的</p>
-<h3 id="项目适用场景"><a href="#项目适用场景" class="headerlink" title="项目适用场景"></a>项目适用场景</h3><p>pc建议使用响应式布局过渡到平板<br>手机建议使用自适应布局.<br>有很多动态效果的pc网站不适合做响应式.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/个人简历/aboutme.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="洪高亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端学习小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/个人简历/aboutme.html" itemprop="url">
-                  自我介绍
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-03T16:02:28+08:00">
-                2016-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/个人简历/" itemprop="url" rel="index">
-                    <span itemprop="name">个人简历</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>我是一个标准的90后宅男,以前的游戏运营狗,现在的前端攻城狮,互联网游戏公司工作5年,喜欢研究技术,研究用户体验,研究数码产品,爱生活,爱前端</p>
-<p><img src="/images/about.jpg" alt="about"></p>
-<p><center>深圳梧桐山顶</center><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/个人简历/aboutme.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1626,7 +1657,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1648,7 +1679,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
