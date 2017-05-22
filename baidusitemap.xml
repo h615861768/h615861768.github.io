@@ -4,6 +4,74 @@
 
     
   <url>
+    <loc>http://honggaoliang.bid/uncategorized/my-digital-products.html</loc>
+    <lastmod>2017-05-22T11:46:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>我的数码设备</title>
+        <pubTime>2016-09-03T14:32:28.000Z</pubTime>
+        
+        <tag>数码</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://honggaoliang.bid/uncategorized/aboutme.html</loc>
+    <lastmod>2017-05-22T11:45:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>自我介绍</title>
+        <pubTime>2016-04-03T08:02:28.000Z</pubTime>
+        
+        <tag>自我介绍</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://honggaoliang.bid/uncategorized/hexo-command.html</loc>
+    <lastmod>2017-05-22T11:45:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>hexo常用命令</title>
+        <pubTime>2016-06-08T13:32:34.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://honggaoliang.bid/uncategorized/auction.html</loc>
+    <lastmod>2017-05-22T11:44:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>auction</title>
+        <pubTime>2017-05-22T10:54:32.000Z</pubTime>
+        
+        <tag>angular</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://honggaoliang.bid/uncategorized/charles-use.html</loc>
     <lastmod>2017-05-07T11:49:44.000Z</lastmod>
     <data>
@@ -209,26 +277,6 @@
 
     
   <url>
-    <loc>http://honggaoliang.bid/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/aboutme.html</loc>
-    <lastmod>2017-04-25T17:40:55.000Z</lastmod>
-    <data>
-        <display>
-        <title>自我介绍</title>
-        <pubTime>2016-04-03T08:02:28.000Z</pubTime>
-        
-        <tag>自我介绍</tag>
-         
-         
-           
-             
-              <breadCrumb title="个人简历" url="http://honggaoliang.bid/categories/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://honggaoliang.bid/uncategorized/%E8%87%AA%E9%80%82%E5%BA%94.html</loc>
     <lastmod>2017-04-25T17:14:21.000Z</lastmod>
     <data>
@@ -240,26 +288,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://honggaoliang.bid/blog/hexo-command.html</loc>
-    <lastmod>2017-04-25T17:10:25.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo常用命令</title>
-        <pubTime>2016-06-08T13:32:34.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="blog" url="http://honggaoliang.bid/categories/blog/"/>
-          
         </display>
     </data>
     </url>
@@ -345,26 +373,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://honggaoliang.bid/%E7%94%9F%E6%B4%BB/my-digital-products.html</loc>
-    <lastmod>2017-04-25T14:35:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>我的数码设备</title>
-        <pubTime>2016-09-03T14:32:28.000Z</pubTime>
-        
-        <tag>数码</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://honggaoliang.bid/categories/%E7%94%9F%E6%B4%BB/"/>
-          
         </display>
     </data>
     </url>
